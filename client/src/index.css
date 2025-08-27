@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Root / Global settings */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
+
+  /* Dark theme defaults */
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
@@ -17,28 +19,38 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Links */
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 a:hover {
   color: #535bf2;
 }
 
+/* Body */
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: flex-start; /* better for desktop layouts */
   min-width: 320px;
   min-height: 100vh;
+  padding: 2rem;
+  background-color: #242424;
 }
 
+/* Headings */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-bottom: 1rem;
+  color: inherit;
 }
 
+/* Buttons */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -47,17 +59,56 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: #ffffff;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
+  background-color: #2a2a2a;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Forms / Inputs */
+input, select, textarea {
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 0.5em 0.75em;
+  font-family: inherit;
+  font-size: 1em;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #646cff;
+  outline: none;
+  background-color: #2a2a2a;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+  color: inherit;
+}
+th, td {
+  border: 1px solid #555;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+thead {
+  background-color: #1f1f1f;
+}
+tbody tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+/* Light theme support */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -67,6 +118,21 @@ button:focus-visible {
     color: #747bff;
   }
   button {
+    background-color: #f9f9f9;
+    color: #213547;
+  }
+  button:hover {
+    background-color: #e2e6ff;
+  }
+  input, select, textarea {
+    background-color: #ffffff;
+    color: #213547;
+    border-color: #ccc;
+  }
+  thead {
+    background-color: #f0f0f0;
+  }
+  tbody tr:nth-child(even) {
     background-color: #f9f9f9;
   }
 }
