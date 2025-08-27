@@ -35,7 +35,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* better for desktop layouts */
+  align-items: flex-start; 
   min-width: 320px;
   min-height: 100vh;
   padding: 2rem;

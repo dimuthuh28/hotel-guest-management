@@ -49,11 +49,11 @@ const GuestList: React.FC = () => {
 
     fetchGuests(search);
 
-    return () => controller.abort(); // cancel in-flight request on unmount
+    return () => controller.abort(); 
   }, [search]);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value); // updates useEffect
+    setSearch(e.target.value); 
   };
 
   return (
